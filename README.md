@@ -4,7 +4,7 @@
 
 ### 效果
 
-![image][https://github.com/Choicc/ScratchCard/blob/master/%E6%95%88%E6%9E%9C%E5%9B%BE.png?raw=true]
+![image](https://raw.githubusercontent.com/Choicc/ScratchCard/master/%E6%95%88%E6%9E%9C%E5%9B%BE.png)
 
 ### 使用教程
 
