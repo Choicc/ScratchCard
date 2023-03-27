@@ -2,6 +2,8 @@
 
 一个使用Vue2版本实现的刮刮乐,刮奖组件,canvas宽高根据用户设置的奖品样式自适应宽高
 
+[Vue3版本](https://github.com/Choicc/Vue3-ScratchCard)
+
 ### 效果
 
 ![image](https://raw.githubusercontent.com/Choicc/ScratchCard/master/%E6%95%88%E6%9E%9C%E5%9B%BE.png)
