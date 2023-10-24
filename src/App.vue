@@ -9,22 +9,13 @@
 -->
 <template>
   <div>
-    <scratch-card
-      maskColor="skyblue"
-      fillStyle="red"
-      font="30px 微软雅黑"
-      text="刮一刮文字"
-      :imageUrl="imageUrl"
-      :radius="5"
-      :scratchRadius="20"
-      :scratchPercent="80"
-      @scratchStart="scratchStart"
-      @scratchEnd="scratchEnd"
-      @scratchAll="scratchAll"
-    >
+    <scratch-card ref="scratchCardRef" maskColor="skyblue" fillStyle="red" font="30px 微软雅黑" text="刮一刮文字"
+      :imageUrl="imageUrl" :radius="5" :scratchRadius="20" :scratchPercent="80" @scratchStart="scratchStart"
+      @scratchEnd="scratchEnd" @scratchAll="scratchAll">
       <!-- 自定义奖品内容插槽 -->
-      <div class="prize">我的奖品</div>
+      <div class="prize">{{ prize }}</div>
     </scratch-card>
+    <div class="btn-reset" @click="reset">重置</div>
   </div>
 </template>
 
@@ -38,6 +29,7 @@ export default {
   data() {
     return {
       imageUrl: require("./assets/thumb-1920-642551.png"),
+      prize: "我的奖品",
     };
   },
   methods: {
@@ -50,6 +42,11 @@ export default {
     scratchAll() {
       console.log("scratchAll");
     },
+    reset() {
+      console.log("reset");
+      this.prize = "重置后我的奖品";
+      this.$refs.scratchCardRef.reset();
+    }
   },
 };
 </script>
@@ -58,6 +55,7 @@ export default {
   margin: 0;
   padding: 0;
 }
+
 .prize {
   width: 80vw;
   height: 45vw;
@@ -65,5 +63,15 @@ export default {
   align-items: center;
   justify-content: center;
   background: lightcoral;
+}
+
+.btn-reset {
+  display: block;
+  width: 10vw;
+  height: 5w;
+  line-height: 5w;
+  text-align: center;
+  border-radius: 10%;
+  border: 1px solid black;
 }
 </style>

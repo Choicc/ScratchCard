@@ -3,13 +3,7 @@
     <div ref="slot" class="slot" :style="{ borderRadius: radius + 'px' }">
       <slot></slot>
     </div>
-    <canvas
-      v-if="width && height"
-      class="canvas"
-      ref="canvas"
-      :width="width"
-      :height="height"
-    ></canvas>
+    <canvas v-if="width && height" class="canvas" ref="canvas" :width="width" :height="height"></canvas>
   </div>
 </template>
 
@@ -215,6 +209,14 @@ export default {
         this.$emit("scratchAll");
       }
     },
+    //重置
+    reset() {
+      this.width = 0;
+      this.height = 0;
+      this.$nextTick(() => {
+        this.init();
+      });
+    }
   },
 };
 </script>
@@ -223,10 +225,12 @@ export default {
   position: relative;
   display: inline-block;
 }
+
 .slot {
   display: inline-block;
   overflow: hidden;
 }
+
 .canvas {
   position: absolute;
   top: 0;
